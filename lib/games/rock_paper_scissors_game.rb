@@ -1,5 +1,6 @@
 module Games
-  class RockPaperScissors
+  class
+  RockPaperScissorsGame
     class Error < StandardError; end
 
     WIN_CHOICES = {
@@ -21,6 +22,14 @@ module Games
       else
         :player_2
       end
+    end
+
+    def self.find_random_name
+      Faker::DcComics.name
+    end
+
+    def self.find_random_move
+      Games::RockPaperScissorsGame::WIN_CHOICES.keys.sample
     end
 
     private
