@@ -1,0 +1,21 @@
+<nav class="py-2 bg-light border-bottom">
+  <div class="container d-flex flex-wrap">
+      <%= link_to root_path, class: 'navbar-brand' do %>
+        <%= image_tag('https://camo.githubusercontent.com/527a13b5cb37766311fcbc439ce1dee183658768af869dad31fb33d5de191420/68747470733a2f2f696d616765732d6e612e73736c2d696d616765732d616d617a6f6e2e636f6d2f696d616765732f492f3631516b766d764564564c2e706e67', height: '30', width: '60')%>
+      <% end %>
+
+    <ul class="nav me-auto">
+      <li class="nav-item">
+        <%= link_to 'Home', games_rock_paper_scissors_path, class: 'nav-link link-dark px-2' %>
+      </li>
+    </ul>
+    <ul class="nav">
+      <li class="nav-item">
+        <%= link_to 'Play game', root_path, class: 'nav-link link-dark px-2' %>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'History', games_rock_paper_scissors_path, class: 'nav-link link-dark px-2' %>
+      </li>
+    </ul>
+  </div>
+</nav>

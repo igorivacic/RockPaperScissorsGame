@@ -1,0 +1,37 @@
+<div class="card text-center mt-5">
+  <h5 class="card-title mt-5">Rock Paper Scissors game</h5>
+  <div class="card-body">
+    <%= form_with url: games_rock_paper_scissors_path, method: :post do |form| %>
+      <div class="d-flex justify-content-center">
+        <div class="form-group col-md-6">
+          <%= form.text_field :player, class: 'form-control', placeholder: 'Enter your name' %>
+
+          <%= form.hidden_field :move, id: 'move' %>
+
+          <div class="row pt-5">
+           <p>Select your move, or leave empty and let computer deside for you</p>
+            <div class="col-4">
+              <a href="#" id="paper">
+                <%= image_tag('Paper.png', id: 'paper', width: 100) %>
+              </a>
+            </div>
+
+            <div class="col-4">
+              <a href="#" id="rock">
+                <%= image_tag('Rock.png', width: 100) %>
+              </a>
+            </div>
+
+            <div class="col-4">
+              <a href="#" id="scissors">
+                <%= image_tag('Scissors.png', width: 100) %>
+              </a>
+            </div>
+          </div>
+
+          <%= form.submit "Play", type: "submit", class: "btn btn-primary mt-2" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

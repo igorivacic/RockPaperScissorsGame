@@ -1,0 +1,26 @@
+<div class="text-center pt-5">
+  <div class="row">
+    <div class="col-5">
+      <h1><%= @game.player_1 %></h1>
+      <%= image_tag("#{@game.player_move(:player_1)}.png") %>
+      <small> <%= @game.player_move(:player_1) %></small>
+    </div>
+
+    <div class="col m-auto">
+      VS
+    </div>
+
+    <div class="col-5">
+      <h1><%= @game.player_2 %></h1>
+      <%= image_tag("#{@game.player_move(:player_2)}.png") %>
+      <small> <%= @game.player_move(:player_2) %></small>
+    </div>
+
+    <div class="col-12 pt-5">
+      <h1>
+        <span>Winner is: </span>
+        <strong><%= @game.winner %></strong>
+      </h1>
+    </div>
+  </div>
+</div>
