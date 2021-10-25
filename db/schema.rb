@@ -10,18 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_23_141007) do
-
+ActiveRecord::Schema.define(version: 20_211_023_141_007) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension 'plpgsql'
 
-  create_table "games", force: :cascade do |t|
-    t.string "player_1"
-    t.string "player_2"
-    t.jsonb "moves", default: [], array: true
-    t.string "winner"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+  create_table 'games', force: :cascade do |t|
+    t.string 'player_1'
+    t.string 'player_2'
+    t.jsonb 'moves', default: [], array: true
+    t.string 'winner'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
   end
-
 end
