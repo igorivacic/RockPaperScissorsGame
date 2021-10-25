@@ -21,9 +21,8 @@ describe Games::RockPaperScissorsController, type: :controller do
       let(:subject) { { player: 'Igor', move: 'Rock' } }
 
       it 'create rock paper scissors game' do
-        expect do
-          post :create, params: { game_params: subject }
-        end
+        expect {
+          post :create, params: { game_params: subject } }
           .to change(Game, :count).by(1)
       end
     end
