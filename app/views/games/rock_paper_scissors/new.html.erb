@@ -4,29 +4,29 @@
     <%= form_with url: games_rock_paper_scissors_path, method: :post do |form| %>
       <div class="d-flex justify-content-center">
         <div class="form-group col-md-6">
-          <%= form.text_field :player, class: 'form-control', placeholder: 'Enter your name' %>
-
+          <%= form.text_field :player, class: 'form-control', placeholder: 'Enter your *name' %>
+          <small class="pt-3">* Leave blank for random choice</small>
           <%= form.hidden_field :move, id: 'move' %>
 
           <div class="row pt-5">
-           <p>Select your move, or leave empty and let computer deside for you</p>
             <div class="col-4">
-              <a href="#" id="paper">
-                <%= image_tag('Paper.png', id: 'paper', width: 100) %>
-              </a>
-            </div>
-
-            <div class="col-4">
-              <a href="#" id="rock">
+              <a href="#" id="Rock">
                 <%= image_tag('Rock.png', width: 100) %>
               </a>
             </div>
 
             <div class="col-4">
-              <a href="#" id="scissors">
+              <a href="#" id="Paper">
+                <%= image_tag('Paper.png', id: 'paper', width: 100) %>
+              </a>
+            </div>
+
+            <div class="col-4">
+              <a href="#" id="Scissors">
                 <%= image_tag('Scissors.png', width: 100) %>
               </a>
             </div>
+            <small class="pt-3">* Select your move, or leave empty and let computer deside for you</small>
           </div>
 
           <%= form.submit "Play", type: "submit", class: "btn btn-primary mt-2" %>
@@ -35,3 +35,7 @@
     <% end %>
   </div>
 </div>
+
+<script>
+  initMoveInputs(['Rock', 'Paper', 'Scissors']);
+</script>

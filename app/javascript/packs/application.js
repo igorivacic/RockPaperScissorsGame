@@ -10,12 +10,23 @@ import 'bootstrap'
 import '../stylesheets/application'
 import "channels"
 
-document.addEventListener("turbolinks:load", () => {
-  $('[data-toggle="tooltip"]').tooltip();
-  $('[data-toggle="popover"]').popover()
-})
+function initMoveInputs(moveInputs) {
+  moveInputs.forEach((move)=> {
+    document.getElementById(move).addEventListener("click", (event) => {
+      unselectItems(moveInputs);
+
+      event.currentTarget.classList.add("selected_button");
+      document.getElementById("move").value = move;
+    });
+  })
+
+  function unselectItems(items) {
+    items.forEach((item) => {
+      document.getElementById(item).classList.remove("selected_button");
+    })
+  }
+}
 
 Rails.start()
-Turbolinks.start()
+window.initMoveInputs = initMoveInputs;
 ActiveStorage.start()
-

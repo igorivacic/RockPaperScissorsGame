@@ -18,8 +18,8 @@
 
     <div class="col-12 pt-5">
       <h1>
-        <span>Winner is: </span>
-        <strong><%= @game.winner %></strong>
+<!--        ubaciti u helper-->
+        <strong><%= @game.winner == "Draw" ? "Draw" : "Winner is #{@game.winner}" %></strong>
       </h1>
     </div>
   </div>
