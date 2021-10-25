@@ -4,9 +4,9 @@ FactoryBot.define do
     player_2 { Faker::DcComics.name }
     moves do
       [{
-         player_1: 'Rock',
-         player_2: 'Scissors'
-       }]
+        player_1: 'Rock',
+        player_2: 'Scissors'
+      }]
     end
 
     trait :without_moves do

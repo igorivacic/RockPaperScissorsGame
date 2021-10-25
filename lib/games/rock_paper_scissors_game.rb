@@ -34,11 +34,11 @@ module Games
 
     private
 
-      def get_valid_player(player)
-        return player if WIN_CHOICES[player].present?
+    def get_valid_player(player)
+      return player if WIN_CHOICES[player].present?
 
-        raise Games::RockPaperScissors::Error,
-              "You must enter #{WIN_CHOICES.keys.join(',')} to play the game."
-      end
+      raise Games::RockPaperScissorsGame::Error,
+            "You must enter #{WIN_CHOICES.keys.join(',')} to play the game."
+    end
   end
 end
