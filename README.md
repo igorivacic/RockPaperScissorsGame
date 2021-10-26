@@ -1,6 +1,4 @@
 # Rock-Paper-Scissors game
-<img width="1680" alt="Screenshot 2021-10-26 at 13 42 29" src="https://user-images.githubusercontent.com/18647408/138871984-ab910dd1-8ef6-42b9-9632-d4d673e75f47.png">
-
 <img width="1680" alt="Screenshot 2021-10-26 at 13 42 29" src="https://user-images.githubusercontent.com/18647408/138871764-08c218c4-7862-4864-bdee-42cceac60347.png">
 <img width="1680" alt="Screenshot 2021-10-26 at 13 38 52" src="https://user-images.githubusercontent.com/18647408/138871774-4fc2418c-1bfc-4531-aefd-22602f5e824f.png">
 <img width="1679" alt="Screenshot 2021-10-26 at 13 44 02" src="https://user-images.githubusercontent.com/18647408/138871791-30281203-9f7e-4dda-9537-b2bae4b442a3.png">
