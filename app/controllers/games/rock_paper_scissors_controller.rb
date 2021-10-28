@@ -6,8 +6,11 @@ module Games
 
     def create
       game = Games::RockPaperScissors.new
-      game.player_1 = game_params[:player].present? ?
-                        game_params[:player] : Games::RockPaperScissorsGame.find_random_name
+      game.player_1 = if game_params[:player].present?
+                        game_params[:player]
+                      else
+                        Games::RockPaperScissorsGame.find_random_name
+                      end
       game.player_2 = Games::RockPaperScissorsGame.find_random_name
       game.moves = init_game_moves(game_params[:move])
 
@@ -32,13 +35,13 @@ module Games
       params.permit(:player, :move)
     end
 
-      def init_game_moves(move)
-        [
-          {
-            player_1: move.present? ? move : Games::RockPaperScissorsGame.find_random_move,
-            player_2: Games::RockPaperScissorsGame.find_random_move
-          }
-        ]
-      end
+    def init_game_moves(move)
+      [
+        {
+          player_1: move.present? ? move : Games::RockPaperScissorsGame.find_random_move,
+          player_2: Games::RockPaperScissorsGame.find_random_move
+        }
+      ]
+    end
   end
 end
