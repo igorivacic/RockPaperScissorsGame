@@ -6,6 +6,7 @@ describe Games::RockPaperScissors do
     it { should have_db_column(:player_1).of_type(:string) }
     it { should have_db_column(:player_2).of_type(:string) }
     it { should have_db_column(:moves).of_type(:jsonb) }
+    it { should have_db_column(:type).of_type(:string) }
     it { should have_db_column(:winner).of_type(:string) }
     it { should have_db_column(:created_at).of_type(:datetime) }
     it { should have_db_column(:updated_at).of_type(:datetime) }
