@@ -26,12 +26,6 @@ module Games
         position = params[:position].to_i
 
         @tic_tac_toe_game.make_move(position, player)
-        # if player == 'X'
-        #   @tic_tac_toe_game.make_move_player_1(position)
-        # elsif player == 'O'
-        #   @tic_tac_toe_game.make_move_player_2(position)
-        # end
-
         @tic_tac_toe_game.determine_winner
         @game.save
       rescue Games::TicTacToeGame::Error => e
