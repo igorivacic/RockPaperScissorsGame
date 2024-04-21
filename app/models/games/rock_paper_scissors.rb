@@ -2,6 +2,8 @@ require 'games/rock_paper_scissors_game'
 
 module Games
   class RockPaperScissors < Game
+    before_create :record_winner
+
     def player_move(player)
       return nil if moves.blank?
 

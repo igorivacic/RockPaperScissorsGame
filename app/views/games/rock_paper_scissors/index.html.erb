@@ -6,17 +6,21 @@
       <th scope="col">Player 1</th>
       <th scope="col">Player 2</th>
       <th scope="col">Winner</th>
+      <th scope="col">Actions</th>
     </tr>
     </thead>
     <tbody>
     <% @games.each do |game| %>
       <tr>
         <th scope="row"><%= game.id %></th>
-        <td><%= game.player_1 %> ( <small><%= game.moves[0]['player_1'] %></small> )</td>
-        <td><%= game.player_2 %> ( <small><%= game.moves[0]['player_2'] %> </small> )</td>
-        <td><%= game.winner %> </td>
-        <td><%= link_to 'Show', games_rock_paper_scissor_path(game) %> </td>
-      </tr>
+        <% if game.winner != "X" || game.winner != "O" %>
+          <td><%= game.player_1 %> ( <small><%= game.moves[0]['player_1'] %></small> )</td>
+          <td><%= game.player_2 %> ( <small><%= game.moves[0]['player_2'] %> </small> )</td>
+          <td><%= game.winner %> </td>
+          <td><%= link_to 'Show', games_rock_paper_scissor_path(game) %> </td>
+          </tr>
+        <% end %>
     <% end %>
-    </table>
+    </tbody>
+  </table>
 </div>
