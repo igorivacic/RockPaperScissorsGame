@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
-  root to: 'games/rock_paper_scissors#new'
+  get '/', to: 'games#new'
+  get 'games/', to: 'games#index'
+  root to: 'games#new'
 
   namespace :games do
     resources :rock_paper_scissors
+    resources :tic_tac_toe
   end
 end

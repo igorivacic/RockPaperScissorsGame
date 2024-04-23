@@ -13,11 +13,16 @@
     <% @games.each do |game| %>
       <tr>
         <th scope="row"><%= game.id %></th>
-        <% if game.winner != "X" || game.winner != "O" %>
+        <% if game.type.eql?("Games::RockPaperScissors") %>
           <td><%= game.player_1 %> ( <small><%= game.moves[0]['player_1'] %></small> )</td>
           <td><%= game.player_2 %> ( <small><%= game.moves[0]['player_2'] %> </small> )</td>
           <td><%= game.winner %> </td>
           <td><%= link_to 'Show', games_rock_paper_scissor_path(game) %> </td>
+        <% else %>
+          <td><%= game.player_1 %></td>
+          <td><%= game.player_2 %></td>
+          <td><%= game.winner %> </td>
+          <td><%= link_to 'Show', games_tic_tac_toe_path(game) %> </td>
           </tr>
         <% end %>
     <% end %>

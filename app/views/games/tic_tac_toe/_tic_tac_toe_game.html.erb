@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <h1 class="mb-4 text-center pt-5">Tic Tac Toe</h1>
+
+      <% if flash[:error] %>
+        <div class="alert alert-danger">
+          <%= flash[:error] %>
+        </div>
+      <% end %>
+
+      <%= form_with(model: @game, url: games_tic_tac_toe_path(@game), method: :patch) do |form| %>
+        <table class="tic_tac_toe mb-4 mx-auto">
+          <% @tic_tac_toe_game.current_board_state.each_slice(3).with_index do |row, row_index| %>
+            <tr>
+              <% row.each_with_index do |cell, cell_index| %>
+                <% if cell %>
+                  <td><%= cell %></td>
+                <% else %>
+                  <td>
+                    <%= form.button '-', value: row_index * 3 + cell_index + 1, name: :position, class: "form-control border-0" %>
+                  </td>
+                <% end %>
+              <% end %>
+            </tr>
+          <% end %>
+      <% end %>
+      </table>
+
+      <% if @winner && @game_over %>
+        <h2 class="text-center">Winner: <%= @winner %></h2>
+      <% else %>
+        <h2 class="text-center">Next move plays: <%= @player %></h2>
+      <% end %>
+    </div>
+  </div>
+</div>
+

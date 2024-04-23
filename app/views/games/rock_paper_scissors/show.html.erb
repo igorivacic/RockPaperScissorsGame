@@ -2,7 +2,11 @@
   <div class="row">
     <div class="col-5">
       <h1><%= @game.player_1 %></h1>
-      <%= image_tag("#{@game.player_move(:player_1)}.png") %>
+      <% if @game.player_move(:player_1) %>
+        <%= image_tag("#{@game.player_move(:player_1)}.png") %>
+      <% else %>
+        <%= image_tag("#{@game.player_1}.png") %>
+      <% end %>
       <small> <%= @game.player_move(:player_1) %></small>
     </div>
 
@@ -12,13 +16,16 @@
 
     <div class="col-5">
       <h1><%= @game.player_2 %></h1>
-      <%= image_tag("#{@game.player_move(:player_2)}.png") %>
+      <% if @game.player_move(:player_2) %>
+        <%= image_tag("#{@game.player_move(:player_2)}.png") %>
+      <% else %>
+        <%= image_tag("#{@game.player_2}.png") %>
+      <% end %>
       <small> <%= @game.player_move(:player_2) %></small>
     </div>
 
     <div class="col-12 pt-5">
       <h1>
-<!--        ubaciti u helper-->
         <strong><%= @game.winner == "Draw" ? "Draw" : "Winner is #{@game.winner}" %></strong>
       </h1>
     </div>

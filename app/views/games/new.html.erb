@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="col-md-6">
+    <div class="card mt-5">
+      <%= link_to new_games_rock_paper_scissor_path do %>
+        <%= image_tag("https://m.media-amazon.com/images/I/61QkvmvEdVL.png", alt: "Rock Paper Scissors", class: "card-img-top img-fluid", style: 'height: 300px') %>
+        <div class="card-body">
+          <h5 class="card-title">Rock Paper Scissors</h5>
+      <% end %>
+      <p class="card-text">Description for Rock Paper Scissors game.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <div class="card mt-5">
+      <%= link_to new_games_tic_tac_toe_path do %>
+        <%= image_tag("https://www.cbc.ca/kids/images/titactoe_thumb.jpeg", alt: "Tic Tac Toe", class: "card-img-top img-fluid", style: 'height: 300px') %>
+        <div class="card-body">
+          <h5 class="card-title">Tic Tac Toe</h5>
+      <% end %>
+      <p class="card-text">Description for Tic Tac Toe game.</p>
+      </div>
+    </div>
+  </div>
+</div>
